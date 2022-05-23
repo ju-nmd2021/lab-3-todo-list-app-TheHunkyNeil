@@ -136,3 +136,19 @@ for (let i = 0, len = deleteTaskList.length; i < len; i++) {
     location.reload();
   };
 }
+// get users
+for (let i = 0; i < userItemList.length; i++) {
+  if (userList[i].id == chooseUserId) {
+    //requires id == chooseUserId
+    userItemList[i].getElementsByClassName("chooseUser")[0].style.display =
+      "inline-block"; // Then do style, display to make it become, allow setting width and height on element, will respect top and bottom margin/padding
+  }
+}
+for (let j = 0; j < taskItemList.length; j++) {
+  if (taskList[j].userId == chooseUserId) {
+    //requires id == chooseUserId
+    taskItemList[j].style.backgroundColor = "skyblue"; //Then execute, the background color will change
+  } else {
+    taskItemList[j].style.backgroundColor = ""; //  otherwise the background color does not change
+  }
+}
