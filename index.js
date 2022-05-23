@@ -113,3 +113,26 @@ for (let i = 0, len = taskItemList.length; i < len; i++) {
       .classList.add("finish"); //Use taskItemList.classList, and then use add to add "finish", which means drawing a slash, which will be executed in css
   }
 }
+
+// Done button event
+for (let i = 0, len = finishTaskList.length; i < len; i++) {
+  finishTaskList[i].onclick = function () {
+    //It is executed through the finishTaskList above
+    taskList[i].finish = true; //if true
+    localStorage.setItem("taskList", JSON.stringify(taskList)); //restore locally
+    location.reload(); //并且重新加载
+  };
+  //.onclick mode: object.onclick = function(){};
+}
+
+// delete button event
+for (let i = 0, len = deleteTaskList.length; i < len; i++) {
+  deleteTaskList[i].onclick = function () {
+    //Create a function to delete tasks
+    taskList.splice(i, 1);
+    //Use the built-in methods of the JavaScript Array object. Change the contents of the array by removing existing elements or replacing existing elements with new ones.
+    //The first is the index, the second is how many elements to remove
+    localStorage.setItem("taskList", JSON.stringify(taskList)); //local store and convert
+    location.reload();
+  };
+}
