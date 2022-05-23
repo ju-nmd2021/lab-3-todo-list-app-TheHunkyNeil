@@ -7,7 +7,7 @@ let taskList = JSON.parse(localStorage.getItem("taskList")) || []; // Get task, 
 let chooseUserId = localStorage.getItem("chooseUserId") || ""; // selected user id
 console.log(taskList); //print taskList
 
-createUserList(); // Generate user list
+createUserList();
 createTaskList(); // Generate task list
 
 // Add user
